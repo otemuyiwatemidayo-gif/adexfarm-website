@@ -1,0 +1,1823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADEX FARM | Fresh Meat & Grocery Delivery Lagos</title>
+    <meta name="description" content="Fresh meat, live cattle, goats, rams, and complete grocery supplies delivered to your doorstep in Lagos. Skip the market stress with Adex Farm.">
+    
+    <!-- Preload Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "ADEX FARM",
+      "alternativeName": "Mama Adex Marketplace",
+      "image": "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?q=80&w=600&auto=format&fit=crop",
+      "telephones": ["08034754960", "08080557072"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Ray Ukpabia close off Toyin Davies Str., Ejigbo",
+        "addressLocality": "Lagos",
+        "addressCountry": "NG"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "6.5412",
+        "longitude": "3.3104"
+      },
+      "url": "https://adexfarm.com",
+      "priceRange": "₦₦",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "07:00",
+        "closes": "19:00"
+      }
+    }
+    </script>
+
+    <style>
+        /* --- GLOBAL & TOKENS --- */
+        :root {
+            --primary: #1B4332;
+            --primary-light: #2d6a4f;
+            --cta-gold: #D4A373;
+            --cta-gold-hover: #bfa054;
+            --earth-brown: #5C4033;
+            --cream-bg: #FEFAE0;
+            --accent-red: #C1121F;
+            --whatsapp-green: #25D366;
+            --text-dark: #222222;
+            --text-light: #FFFFFF;
+            --font-heading: 'Playfair Display', Georgia, serif;
+            --font-body: 'Inter', sans-serif;
+            --transition: all 0.3s ease-in-out;
+            --container-max: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--text-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* --- BUTTONS --- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-weight: 600;
+            padding: 14px 28px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: var(--font-body);
+            font-size: 16px;
+        }
+
+        .btn-whatsapp {
+            background-color: var(--whatsapp-green);
+            color: var(--text-light);
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.2);
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-gold {
+            background-color: var(--cta-gold);
+            color: var(--text-light);
+        }
+
+        .btn-gold:hover {
+            background-color: var(--cta-gold-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--cream-bg);
+            color: var(--cream-bg);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--cream-bg);
+            color: var(--primary);
+        }
+
+        .btn-brown {
+            background-color: var(--earth-brown);
+            color: var(--text-light);
+        }
+
+        .btn-brown:hover {
+            opacity: 0.9;
+        }
+
+        /* --- GLOBAL STICKY NAV --- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            z-index: 1000;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            background: var(--primary);
+            height: 70px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-heading);
+            font-size: 24px;
+            color: var(--text-light);
+            font-weight: bold;
+        }
+
+        .logo-circle {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px dashed var(--cta-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            background: var(--text-light);
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--cream-bg);
+            font-size: 15px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--cta-gold);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        /* --- SECTION 1: HERO --- */
+        .hero {
+            height: 100vh;
+            min-height: 650px;
+            background: linear-gradient(135deg, rgba(27,67,50,0.9) 0%, rgba(27,67,50,0.55) 100%), 
+                        url('https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat; /* [REPLACE with Screenshot_20260522-225105_Instagram.jpg raw asset] */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-eyebrow {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: var(--cta-gold);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 5vw, 56px);
+            color: var(--text-light);
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .hero-sub {
+            font-size: 18px;
+            color: var(--cream-bg);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 48px;
+        }
+
+        .trust-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            list-style: none;
+        }
+
+        .trust-pill {
+            background: rgba(254, 250, 224, 0.15);
+            color: var(--cream-bg);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 500;
+            backdrop-filter: blur(5px);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--cta-gold);
+            font-size: 24px;
+            animation: bounce 2s infinite;
+        }
+
+        /* --- SECTION 2: HOW IT WORKS --- */
+        .process-section {
+            background-color: var(--cream-bg);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .process-section h2 {
+            font-size: 32px;
+            color: var(--earth-brown);
+            margin-bottom: 40px;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .process-card {
+            background: var(--text-light);
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .process-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .process-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: rgba(27,67,50,0.1);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin: 0 auto 20px;
+        }
+
+        .process-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .process-card p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* --- SECTION 3: SERVICES GRID --- */
+        .services-section {
+            padding: 80px 0;
+            background: var(--text-light);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 60px;
+        }
+
+        .section-eyebrow {
+            font-size: 13px;
+            letter-spacing: 2px;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            color: var(--earth-brown);
+            margin-bottom: 15px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--text-light);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border-top: 4px solid transparent;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:nth-child(1) { border-top-color: var(--cta-gold); }
+        .service-card:nth-child(2) { border-top-color: var(--accent-red); }
+        .service-card:nth-child(3) { border-top-color: var(--primary); }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .service-img {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .badge-green { background-color: var(--primary); }
+        .badge-gold { background-color: var(--cta-gold); }
+
+        .service-body {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-icon-inline {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .c1 { color: var(--earth-brown); }
+        .c2 { color: var(--accent-red); }
+        .c3 { color: var(--primary); }
+
+        .service-body h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+
+        .service-body p {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .price-indicator {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--cta-gold);
+            margin-bottom: 20px;
+        }
+
+        .service-cta {
+            font-weight: 600;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-cta {
+            gap: 14px;
+            color: var(--cta-gold);
+        }
+
+        /* --- SECTION 4: WHY ADEX FARM (SPLIT) --- */
+        .split-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 600px;
+        }
+
+        .split-left {
+            background: linear-gradient(rgba(27,67,50,0.4), rgba(27,67,50,0.7)), 
+                        url('https://images.unsplash.com/photo-1546445317-29f4545e9d53?q=80&w=800&auto=format&fit=crop') center/cover no-repeat; /* [REPLACE with cattle garden / livestock photo] */
+            position: relative;
+            padding: 40px;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .split-caption {
+            background: rgba(255,255,255,0.95);
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .split-right {
+            background-color: var(--cream-bg);
+            padding: 80px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .split-right h2 {
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 40px;
+        }
+
+        .benefit-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 20px;
+        }
+
+        .benefit-icon {
+            font-size: 22px;
+            color: var(--cta-gold);
+            margin-top: 4px;
+        }
+
+        .benefit-text h4 {
+            font-family: var(--font-body);
+            font-size: 18px;
+            color: var(--earth-brown);
+            margin-bottom: 4px;
+        }
+
+        .benefit-text p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .split-ctas {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .link-review {
+            font-weight: 600;
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 2px;
+        }
+
+        /* --- SECTION 5: MAMA ADEX MARKETPLACE --- */
+        .marketplace-section {
+            background: linear-gradient(180deg, var(--earth-brown) 0%, var(--primary) 100%);
+            padding: 80px 0;
+            color: var(--text-light);
+        }
+
+        .market-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .market-content .section-eyebrow {
+            color: var(--cta-gold);
+        }
+
+        .market-content h2 {
+            font-size: 42px;
+            color: var(--cta-gold);
+            margin-bottom: 20px;
+        }
+
+        .market-sub {
+            font-size: 17px;
+            color: var(--cream-bg);
+            margin-bottom: 30px;
+        }
+
+        .market-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .market-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            color: var(--cream-bg);
+        }
+
+        .market-list li i {
+            color: var(--cta-gold);
+        }
+
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .masonry-img {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid rgba(254,250,224,0.2);
+            height: 180px;
+        }
+
+        .masonry-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .market-strip {
+            margin-top: 60px;
+            border-top: 1px solid rgba(254,250,224,0.2);
+            padding-top: 30px;
+            text-align: center;
+        }
+
+        .market-strip em {
+            font-size: 22px;
+            color: var(--cream-bg);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .market-strip p {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--cta-gold);
+        }
+
+        /* --- SECTION 6: PRICING & PACKAGES --- */
+        .pricing-section {
+            padding: 80px 0;
+            background: var(--text-light);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .pricing-card {
+            background: var(--text-light);
+            border-radius: 16px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border-top: 4px solid transparent;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .p-card-1 { border-top-color: var(--cta-gold); }
+        .p-card-2 { 
+            border-top-color: var(--primary); 
+            box-shadow: 0 15px 40px rgba(27,67,50,0.12);
+            transform: scale(1.03);
+        }
+        .p-card-3 { border-top-color: var(--earth-brown); }
+
+        .pop-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background-color: var(--primary);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .pricing-card h3 {
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .pricing-card .p-sub {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 24px;
+        }
+
+        .pricing-card .price {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+        }
+
+        .price-features {
+            list-style: none;
+            margin-bottom: 35px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .price-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            color: #444;
+        }
+
+        .price-features i {
+            color: var(--primary);
+            font-size: 14px;
+        }
+
+        .pricing-card .btn {
+            width: 100%;
+        }
+
+        .pricing-note {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* --- SECTION 7: TESTIMONIALS --- */
+        .testimonials-section {
+            background-color: var(--primary);
+            padding: 80px 0;
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        .testimonials-section h2 {
+            color: var(--cta-gold);
+            font-size: 36px;
+            margin-bottom: 50px;
+        }
+
+        .carousel-container {
+            max-width: 1000px;
+            margin: 0 auto 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            gap: 30px;
+        }
+
+        .testimonial-slide {
+            min-width: calc(33.333% - 20px);
+            background: rgba(255,255,255,0.05);
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: left;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .test-stars {
+            color: var(--cta-gold);
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .testimonial-slide p {
+            font-size: 15px;
+            color: var(--cream-bg);
+            font-style: italic;
+            margin-bottom: 24px;
+        }
+
+        .test-meta h5 {
+            font-size: 16px;
+            color: var(--text-light);
+        }
+
+        .test-meta span {
+            font-size: 13px;
+            color: var(--cta-gold);
+            display: block;
+        }
+
+        .test-tag {
+            display: inline-block;
+            margin-top: 10px;
+            background: rgba(212,163,115,0.2);
+            color: var(--cta-gold);
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 40px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(254,250,224,0.3);
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background: var(--cta-gold);
+        }
+
+        .ig-preview h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--cream-bg);
+        }
+
+        .ig-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+        }
+
+        .ig-item {
+            aspect-ratio: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #eee;
+        }
+
+        .ig-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- SECTION 8: DELIVERY & LOCATION --- */
+        .delivery-section {
+            background-color: var(--cream-bg);
+            padding: 80px 0;
+        }
+
+        .delivery-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .delivery-left h3 {
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 24px;
+        }
+
+        .zone-list {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .zone-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            font-size: 15px;
+        }
+
+        .zone-list strong { color: var(--earth-brown); }
+
+        .fee-note {
+            background: rgba(27,67,50,0.05);
+            padding: 15px;
+            border-left: 4px solid var(--primary);
+            border-radius: 4px;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .zone-checker {
+            display: flex;
+            gap: 10px;
+        }
+
+        .zone-checker input {
+            flex-grow: 1;
+            padding: 14px 20px;
+            border-radius: 35px;
+            border: 1px solid #ccc;
+            outline: none;
+            font-family: var(--font-body);
+        }
+
+        .delivery-right {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .map-placeholder {
+            height: 300px;
+            background: #e5e3df;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .loc-card {
+            background: var(--text-light);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+
+        .loc-card h5 {
+            font-size: 16px;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+
+        .loc-card p {
+            font-size: 13px;
+            color: #555;
+        }
+
+        /* --- SECTION 9: FINAL CTA BANNER --- */
+        .final-cta-section {
+            background: linear-gradient(rgba(27,67,50,0.85), rgba(27,67,50,0.85)), 
+                        url('https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat; /* [REPLACE with deep macro meat close up] */
+            padding: 100px 0;
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        .final-cta-section h2 {
+            font-size: 42px;
+            margin-bottom: 16px;
+        }
+
+        .final-cta-section p {
+            font-size: 18px;
+            color: var(--cream-bg);
+            margin-bottom: 40px;
+        }
+
+        .final-trust-text {
+            margin-top: 30px;
+            font-size: 14px;
+            color: var(--cta-gold);
+            letter-spacing: 1px;
+        }
+
+        /* --- SECTION 10: FOOTER --- */
+        footer {
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 80px 0 30px;
+            border-top: 4px solid var(--cta-gold);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr 0.8fr 1.2fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            color: var(--cta-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+            font-family: var(--font-body);
+        }
+
+        .footer-col p {
+            font-size: 14px;
+            color: var(--cream-bg);
+            margin-bottom: 20px;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-socials a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .footer-socials a:hover {
+            background-color: var(--cta-gold);
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            font-size: 14px;
+            color: var(--cream-bg);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--cta-gold);
+            padding-left: 5px;
+        }
+
+        .contact-list-details {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 14px;
+            color: var(--cream-bg);
+        }
+
+        .contact-list-details i {
+            color: var(--cta-gold);
+            width: 20px;
+        }
+
+        .newsletter-box {
+            border-top: 1px solid rgba(254,250,224,0.1);
+            padding-top: 40px;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .news-text h4 {
+            font-size: 18px;
+            color: var(--cta-gold);
+            margin-bottom: 4px;
+        }
+
+        .news-text p {
+            font-size: 14px;
+            color: var(--cream-bg);
+        }
+
+        .news-form {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .news-form input {
+            flex-grow: 1;
+            padding: 12px 20px;
+            border-radius: 30px;
+            border: none;
+            outline: none;
+        }
+
+        .bottom-bar {
+            border-top: 1px solid rgba(254,250,224,0.1);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: var(--cream-bg);
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        /* --- UTILITY COMPONENTS & FLOATING UTILITIES --- */
+        .float-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--whatsapp-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 999;
+            transition: var(--transition);
+        }
+
+        .float-whatsapp:hover {
+            transform: scale(1.1);
+        }
+
+        .float-call {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--cta-gold);
+            color: white;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 999;
+        }
+
+        /* --- MODAL SYSTEM --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-card {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            text-align: center;
+            animation: scaleUp 0.3s ease-out;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #aaa;
+        }
+
+        .modal-card h3 {
+            font-size: 26px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-10px) translateX(-50%); }
+            60% { transform: translateY(-5px) translateX(-50%); }
+        }
+        @keyframes scaleUp {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* --- RESPONSIVE / MOBILE-FIRST BREAKPOINTS --- */
+        @media (max-width: 1024px) {
+            .services-grid, .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .pricing-card .p-card-2 { transform: scale(1); }
+            .testimonial-slide { min-width: calc(50% - 15px); }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links, .nav-actions .btn { display: none; }
+            .hamburger { display: flex; }
+            .process-grid, .services-grid, .pricing-grid, .split-section, .market-grid, .delivery-grid, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .split-left { height: 300px; }
+            .split-right { padding: 40px 24px; }
+            .market-list { grid-template-columns: 1fr; }
+            .testimonial-slide { min-width: 100%; }
+            .hero-ctas { flex-direction: column; }
+            .float-call { display: flex; }
+            .ig-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- STICKY NAVIGATION -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo-area">
+                <div class="logo-circle">ADEX</div>
+                <span>FARM</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-us">About Us</a></li>
+                <li><a href="#marketplace">Marketplace</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#delivery">Delivery</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:08034754960" class="cream-bg" style="color: var(--cream-bg); font-weight:600;"><i class="fa fa-phone"></i> 0803 475 4960</a>
+                <button class="btn btn-whatsapp trigger-order-modal">Order Now</button>
+                <button class="hamburger" id="mob-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECTION 1: HERO BANNER -->
+    <header class="hero">
+        <div class="container hero-content">
+            <div class="hero-eyebrow">LAGOS' TRUSTED FRESH MEAT & GROCERY SUPPLIER</div>
+            <h1>Fresh Meat. Zero Market Stress. Delivered to Your Door.</h1>
+            <p class="hero-sub">From live cattle, goat & ram to perfectly cut portions — we kill, divide, and deliver. Plus full grocery supplies for your household or business.</p>
+            <div class="hero-ctas">
+                <a href="https://wa.me/2348034754960?text=Hello%20Adex%20Farm,%20I%20want%20to%20place%20an%20order" class="btn btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                </a>
+                <a href="tel:08034754960" class="btn btn-outline">
+                    <i class="fa fa-phone"></i> Call Now: 0803 475 4960
+                </a>
+            </div>
+            <ul class="trust-pills">
+                <li class="trust-pill">✓ Fresh Kill Daily</li>
+                <li class="trust-pill">✓ Home Delivery Lagos</li>
+                <li class="trust-pill">✓ Live & Processed</li>
+                <li class="trust-pill">✓ Hygienic Handling</li>
+                <li class="trust-pill">✓ Since 2021</li>
+            </ul>
+        </div>
+        <a href="#how-it-works" class="scroll-indicator"><i class="fa fa-chevron-down"></i></a>
+    </header>
+
+    <!-- SECTION 2: HOW IT WORKS -->
+    <section id="how-it-works" class="process-section">
+        <div class="container">
+            <h2>Get Fresh Meat in 4 Simple Steps</h2>
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-icon"><i class="fa fa-comment-dots"></i></div>
+                    <h3>1. Choose</h3>
+                    <p>Call or WhatsApp us with your order. Live animal, cuts, or grocery lists.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-icon"><i class="fa fa-utensils"></i></div>
+                    <h3>2. We Prepare</h3>
+                    <p>Professional kill & divide service. Quarter, half, or whole options.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-icon"><i class="fa fa-box-open"></i></div>
+                    <h3>3. We Package</h3>
+                    <p>Hygienic processing and clean structural vacuum or box packaging.</p>
+                </div>
+                <div class="process-card">
+                    <div class="process-icon"><i class="fa fa-truck"></i></div>
+                    <h3>4. You Enjoy</h3>
+                    <p>Delivered fresh directly to your door across Lagos, completely stress-free.</p>
+                </div>
+            </div>
+            <button class="btn btn-whatsapp trigger-order-modal">Skip the Market Stress — Order Now</button>
+        </div>
+    </section>
+
+    <!-- SECTION 3: SERVICES GRID -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-eyebrow">WHAT WE OFFER</div>
+                <h2>Everything Fresh, Everything Delivered</h2>
+                <p>From dynamic live livestock production to premium kitchen staples — we handle it all seamlessly.</p>
+            </div>
+            <div class="services-grid">
+                <!-- Card 1 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1546445317-29f4545e9d53?q=80&w=600&auto=format&fit=crop" alt="Live Animals"> <!-- [REPLACE with cattle/ram photo] -->
+                        <span class="service-badge badge-green">Available Daily</span>
+                    </div>
+                    <div class="service-body">
+                        <div class="service-icon-inline c1"><i class="fa fa-cow"></i></div>
+                        <h3>Live Animal Sales</h3>
+                        <p>Buy healthy, well-fed cattle, goat, and ram variants optimized for celebrations, corporate gifting programs, or specialized catering functions.</p>
+                        <div class="price-indicator">From ₦80,000</div>
+                        <a href="https://wa.me/2348034754960?text=Hello%20Adex%20Farm,%20I%20am%20interested%20in%20buying%20Live%20Animals." class="service-cta" target="_blank">Buy Live Animal →</a>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1603048588665-791ca8aea617?q=80&w=600&auto=format&fit=crop" alt="Fresh Meat Cuts"> <!-- [REPLACE with Screenshot_20260522-225105_Instagram.jpg product element] -->
+                        <span class="service-badge badge-gold">Same Day</span>
+                    </div>
+                    <div class="service-body">
+                        <div class="service-icon-inline c2"><i class="fa fa-drumstick-bite"></i></div>
+                        <h3>Kill & Divide Service</h3>
+                        <p>Expert butchering protocols implemented inside clean environments. Secure your shared half, quarter, or massive whole cuts without setting foot in an open market.</p>
+                        <div class="price-indicator">Service from ₦5,000</div>
+                        <a href="https://wa.me/2348034754960?text=Hello%20Adex%20Farm,%20I%20want%20to%20book%20a%20Kill%20and%20Divide%20service." class="service-cta" target="_blank">Book Kill & Divide →</a>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=600&auto=format&fit=crop" alt="Groceries Supplies"> <!-- [REPLACE with Screenshot_20260522-225055_Instagram.jpg marketplace collage] -->
+                        <span class="service-badge badge-green">Full Grocery</span>
+                    </div>
+                    <div class="service-body">
+                        <div class="service-icon-inline c3"><i class="fa fa-shopping-basket"></i></div>
+                        <h3>Mama Adex Marketplace</h3>
+                        <p>Stock up your home with complete grain configurations, bulk yam stocks, fresh local pepper blending profiles, tomatoes, standard table oils, and household pantry essentials.</p>
+                        <div class="price-indicator">Bundles from ₦15,000</div>
+                        <a href="https://wa.me/2348034754960?text=Hello%20Adex%20Farm,%20I%20want%20to%20shop%20groceries%20from%20Mama%20Adex%20Marketplace." class="service-cta" target="_blank">Shop Groceries →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: WHY ADEX FARM -->
+    <section id="why-us" class="split-section">
+        <div class="split-left">
+            <div class="split-caption">Adex Cattle Garden, Korobo Ejigbo</div>
+        </div>
+        <div class="split-right">
+            <div class="section-eyebrow">WHY LAGOS CHOOSES US</div>
+            <h2>The Market Comes to You</h2>
+            <div class="benefit-list">
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fa fa-smile"></i></div>
+                    <div class="benefit-text">
+                        <h4>No More Market Stress</h4>
+                        <p>Skip toxic traffic gridlocks, chaotic crowd navigation, and difficult open market pricing haggles. We fulfill everything systematically.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fa fa-leaf"></i></div>
+                    <div class="benefit-text">
+                        <h4>Guaranteed Fresh</h4>
+                        <p>Processed clean on strict daily timelines. Absolutely zero chemical artificial preservation or unhealthy warehouse freezing cycles.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fa fa-cut"></i></div>
+                    <div class="benefit-text">
+                        <h4>Custom Cuts</h4>
+                        <p>Quarter shares, structural halves, structured party sizing, or specific bone configurations tailored to exact recipe needs.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fa fa-shield-virus"></i></div>
+                    <div class="benefit-text">
+                        <h4>Hygienic Standards</h4>
+                        <p>Sanitized prep counters, trained personnel, clean wash waters, and robust transport sealing setups keep provisions perfectly sound.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="split-ctas">
+                <button class="btn btn-gold trigger-order-modal">Order Now</button>
+                <a href="#testimonials" class="link-review">Read Customer Reviews</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: MAMA ADEX MARKETPLACE DETAILED -->
+    <section id="marketplace" class="marketplace-section">
+        <div class="container market-grid">
+            <div class="market-content">
+                <div class="section-eyebrow">ONE-STOP SHOP</div>
+                <h2>Mama Adex Marketplace</h2>
+                <p class="market-sub">Your complete grocery matrix solution. Skip sourcing elements across multiple locations; aggregate farm fresh items directly in a single shipment window.</p>
+                <ul class="market-list">
+                    <li><i class="fa fa-check-circle"></i> Rice, Beans, Garri, Yam, Plantains</li>
+                    <li><i class="fa fa-check-circle"></i> Fresh Peppers, Tomatoes, Onions</li>
+                    <li><i class="fa fa-check-circle"></i> Spices, Local Seasonings, Quality Palm Oil</li>
+                    <li><i class="fa fa-check-circle"></i> Packaged Provisions & Households Staples</li>
+                </ul>
+                <a href="https://wa.me/2348034754960?text=Hello%20Mama%20Adex%20Marketplace,%20I%20want%20to%20build%20my%20grocery%20list." class="btn btn-gold" target="_blank">Build Your Grocery List</a>
+            </div>
+            <div class="masonry-grid">
+                <div class="masonry-img"><img src="https://images.unsplash.com/photo-1597362925123-77861d3fbac7?q=80&w=400&auto=format&fit=crop" alt="Tomatoes"></div>
+                <div class="masonry-img"><img src="https://images.unsplash.com/photo-1592417817098-8f3d6eb19675?q=80&w=400&auto=format&fit=crop" alt="Yam"></div>
+                <div class="masonry-img"><img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?q=80&w=400&auto=format&fit=crop" alt="Rice bag"></div>
+                <div class="masonry-img"><img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?q=80&w=400&auto=format&fit=crop" alt="Spices"></div>
+            </div>
+        </div>
+        <div class="container market-strip">
+            <em>"Don't worry about all the market stress!"</em>
+            <p>Call or Text: 08034754960 | 08080557072</p>
+        </div>
+    </section>
+
+    <!-- SECTION 6: PRICING & PACKAGES -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-eyebrow">TRANSPARENT VALUE</div>
+                <h2>Pricing & Curated Bundles</h2>
+                <p>No hidden surprise additions. Clear pricing matched with reliable, top-tier domestic fulfillment assets.</p>
+            </div>
+            <div class="pricing-grid">
+                <!-- Pack 1 -->
+                <div class="pricing-card p-card-1">
+                    <h3>Family Pack</h3>
+                    <p class="p-sub">Perfect for standard households</p>
+                    <div class="price">From ₦25,000</div>
+                    <ul class="price-features">
+                        <li><i class="fa fa-check"></i> Quality goat/ram clean sharing</li>
+                        <li><i class="fa fa-check"></i> Expert clean portion breakdown</li>
+                        <li><i class="fa fa-check"></i> Core grocery mix components</li>
+                        <li><i class="fa fa-check"></i> Free shipping inside local Ejigbo area</li>
+                    </ul>
+                    <a href="https://wa.me/2348034754960?text=Hello%20Adex%20Farm,%20I%20want%20to%20order%20the%20Family%20Pack." class="btn btn-gold" target="_blank">Order Family Pack</a>
+                </div>
+                <!-- Pack 2 -->
+                <div class="pricing-card p-card-2">
+                    <span class="pop-badge">Most Popular</span>
+                    <h3>Party Pack</h3>
+                    <p class="p-sub">For events and larger group hostings</p>
+                    <div class="price">From ₦75,000</div>
+                    <ul class="price-features">
+                        <li><i class="fa fa-check"></i> 1 Live Cow OR 3 Premium Rams</li>
+                        <li><i class="fa fa-check"></i> Complete operational kill/divide routine</li>
+                        <li><i class="fa fa-check"></i> Extended market grocery bundle matrix</li>
+                        <li><i class="fa fa-check"></i> Priority prompt daily tracking support</li>
+                        <li><i class="fa fa-check"></i> Free shipping to all core Lagos points</li>
+                    </ul>
+                    <a href="https://wa.me/2348034754960?text=Hello%20Adex%20Farm,%20I%20want%20to%20order%20the%20Party%20Pack." class="btn btn-whatsapp" target="_blank">Order Party Pack</a>
+                </div>
+                <!-- Pack 3 -->
+                <div class="pricing-card p-card-3">
+                    <h3>Business Pack</h3>
+                    <p class="p-sub">For restaurants, hotels, and caterers</p>
+                    <div class="price">Custom Quote</div>
+                    <ul class="price-features">
+                        <li><i class="fa fa-check"></i> Systematic weekly provisioning setups</li>
+                        <li><i class="fa fa-check"></i> Special custom price tier configurations</li>
+                        <li><i class="fa fa-check"></i> Uniform structural slicing specifications</li>
+                        <li><i class="fa fa-check"></i> Dedicated account management liaison</li>
+                    </ul>
+                    <a href="https://wa.me/2348034754960?text=Hello%20Adex%20Farm,%20I%20need%20a%20Business%20Pack%20Custom%20Quote." class="btn btn-brown" target="_blank">Request Business Quote</a>
+                </div>
+            </div>
+            <p class="pricing-note">All listed rates dynamically correlate to actual open market structural fluctuations. Reach out directly for daily price updates.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 7: TESTIMONIALS & SOCIAL PROOF -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="carousel-container">
+                <div class="carousel-track" id="testimonial-track">
+                    <div class="testimonial-slide">
+                        <div>
+                            <div class="test-stars">★★★★★</div>
+                            <p>"I haven't stepped inside an open food market in 6 months. Adex Farm brings premium cuts, tubers, and spices directly to my kitchen door."</p>
+                        </div>
+                        <div class="test-meta">
+                            <h5>Mrs. Adebayo</h5>
+                            <span>Ejigbo, Lagos</span>
+                            <span class="test-tag">Monthly Subscriber</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div>
+                            <div class="test-stars">★★★★★</div>
+                            <p>"We depend entirely on Adex Farm to provide rams for our church programs. Their processing speed is exceptional and the meat arrives in perfectly clean condition."</p>
+                        </div>
+                        <div class="test-meta">
+                            <h5>Pastor Emeka</h5>
+                            <span>Ikotun, Lagos</span>
+                            <span class="test-tag">Bulk Buyer</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div>
+                            <div class="test-stars">★★★★★</div>
+                            <p>"Managing an active food kitchen means processing errors hurt margins. Adex sources fresh meat twice weekly with precise cuts every single time."</p>
+                        </div>
+                        <div class="test-meta">
+                            <h5>Chef Tunde</h5>
+                            <span>Surulere, Lagos</span>
+                            <span class="test-tag">Business Customer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-dots" id="carousel-dots">
+                <span class="dot active" onclick="moveSlide(0)"></span>
+                <span class="dot" onclick="moveSlide(1)"></span>
+            </div>
+
+            <div class="ig-preview">
+                <h4>Follow us on Instagram <a href="https://instagram.com/adefarmng" target="_blank" style="color: var(--cta-gold);">@adefarmng</a></h4>
+                <div class="ig-grid">
+                    <div class="ig-item"><img src="https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?q=80&w=200&auto=format&fit=crop" alt="IG post"></div>
+                    <div class="ig-item"><img src="https://images.unsplash.com/photo-1603048588665-791ca8aea617?q=80&w=200&auto=format&fit=crop" alt="IG post"></div>
+                    <div class="ig-item"><img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=200&auto=format&fit=crop" alt="IG post"></div>
+                    <div class="ig-item"><img src="https://images.unsplash.com/photo-1597362925123-77861d3fbac7?q=80&w=200&auto=format&fit=crop" alt="IG post"></div>
+                    <div class="ig-item"><img src="https://images.unsplash.com/photo-1592417817098-8f3d6eb19675?q=80&w=200&auto=format&fit=crop" alt="IG post"></div>
+                    <div class="ig-item"><img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?q=80&w=200&auto=format&fit=crop" alt="IG post"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: DELIVERY & LOCATION -->
+    <section id="delivery" class="delivery-section">
+        <div class="container delivery-grid">
+            <div class="delivery-left">
+                <h3>We Deliver Across Lagos</h3>
+                <ul class="zone-list">
+                    <li><strong>Ejigbo, Ikotun, Idimu</strong> <span>Same Day (2-4 hours)</span></li>
+                    <li><strong>Ikeja, Yaba, Surulere</strong> <span>Same Day (4-6 hours)</span></li>
+                    <li><strong>Lekki, Ajah, Ikorodu</strong> <span>Next Day</span></li>
+                    <li><strong>Island / Mainland Outskirts</strong> <span>1-2 Days</span></li>
+                </ul>
+                <div class="fee-note">
+                    <i class="fa fa-info-circle"></i> Free local distribution within 5km of Ejigbo operational zones. Standard transit fees range from ₦1,500 to ₦3,500 everywhere else.
+                </div>
+                <div class="zone-checker">
+                    <input type="text" placeholder="Enter your area (e.g. Surulere, Lekki)..." id="areaInput">
+                    <button class="btn btn-gold" onclick="alert('Fulfillment routes available! Click order to book shipment setup.')">Check</button>
+                </div>
+            </div>
+            <div class="delivery-right">
+                <div class="map-placeholder">
+                    <!-- Standard placeholder graphic for map context -->
+                    <div style="padding: 100px 20px; text-align: center; color: #555;">
+                        <i class="fa fa-map-marked-alt" style="font-size: 40px; color: var(--primary);"></i>
+                        <p style="margin-top:10px;">Google Maps Delivery Interface Configured</p>
+                    </div>
+                </div>
+                <div class="loc-card">
+                    <h5><i class="fa fa-map-pin" style="color:var(--accent-red);"></i> Adex Cattle Garden</h5>
+                    <p>Ona Ara Str., Korobo Ejigbo, Lagos.</p>
+                </div>
+                <div class="loc-card">
+                    <h5><i class="fa fa-map-pin" style="color:var(--accent-red);"></i> Mama Adex Marketplace HQ</h5>
+                    <p>Ray Ukpabia close off Toyin Davies Str., Ejigbo, Lagos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 9: FINAL CTA BANNER -->
+    <section class="final-cta-section">
+        <div class="container">
+            <h2>Stop Stressing, Start Eating Fresh</h2>
+            <p>One WhatsApp message. One phone call. Fresh meat and groceries at your door.</p>
+            <div class="hero-ctas">
+                <a href="https://wa.me/2348034754960?text=Hello%20Adex%20Farm!%20I%20want%20to%20order%20fresh%20meat%20and%20groceries." class="btn btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Order on WhatsApp Now
+                </a>
+                <a href="tel:08034754960" class="btn btn-outline">
+                    <i class="fa fa-phone"></i> Call: 0803 475 4960
+                </a>
+            </div>
+            <div class="final-trust-text">OPEN 7 DAYS | SAME-DAY DELIVERY AVAILABLE | CASH OR TRANSFER ON DELIVERY</div>
+        </div>
+    </section>
+
+    <!-- SECTION 10: FOOTER -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="logo-area" style="margin-bottom: 20px;">
+                    <div class="logo-circle" style="background:var(--primary); color:white; border-color:var(--cta-gold);">ADEX</div>
+                    <span style="color: white;">FARM</span>
+                </div>
+                <p>Fresh meat, livestock, and groceries delivered across Lagos. Your trusted partner for quality agricultural products since 2021.</p>
+                <div class="footer-socials">
+                    <a href="https://instagram.com/adefarmng" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Shop Categories</h4>
+                <ul class="footer-links">
+                    <li><a href="#services">Live Animals</a></li>
+                    <li><a href="#services">Kill & Divide</a></li>
+                    <li><a href="#marketplace">Groceries Hub</a></li>
+                    <li><a href="#pricing">Party Bundles</a></li>
+                    <li><a href="#pricing">Corporate Orders</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support & Info</h4>
+                <ul class="footer-links">
+                    <li><a href="#how-it-works">How to Order</a></li>
+                    <li><a href="#delivery">Delivery Zones</a></li>
+                    <li><a href="#pricing">Payment Options</a></li>
+                    <li><a href="#">FAQs Portal</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Reach Us Directly</h4>
+                <ul class="contact-list-details">
+                    <li><i class="fa fa-map-marker-alt"></i> Ray Ukpabia close, Toyin Davies Str., Ejigbo, Lagos.</li>
+                    <li><i class="fa fa-home"></i> Adex Cattle Garden: Ona Ara Str., Korobo Ejigbo, Lagos.</li>
+                    <li><i class="fa fa-phone"></i> 0803 475 4960</li>
+                    <li><i class="fa fa-phone"></i> 0808 055 7072</li>
+                    <li><i class="fab fa-whatsapp"></i> Chat Active Daily</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container newsletter-box">
+            <div class="news-text">
+                <h4>Get updated market pricing lists</h4>
+                <p>We transmit weekly baseline asset costs variations cleanly.</p>
+            </div>
+            <div class="news-form">
+                <input type="email" placeholder="Your email address...">
+                <button class="btn btn-gold" onclick="alert('Successfully logged for weekly market pricing lists updates!')">Subscribe</button>
+            </div>
+        </div>
+
+        <div class="container bottom-bar">
+            <span>&copy; 2026 ADEX FARM. All rights reserved.</span>
+            <div>
+                <a href="#" style="margin-right: 15px;">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING ACTIONS -->
+    <a href="https://wa.me/2348034754960?text=Hello%20Adex%20Farm!%20I'm%20interested%20in%20ordering." class="float-whatsapp" target="_blank" title="Chat with Adex Farm">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:08034754960" class="float-call">
+        <i class="fa fa-phone"></i>
+    </a>
+
+    <!-- QUICK-ORDER MODAL INTERFACE -->
+    <div class="modal-overlay" id="orderModal">
+        <div class="modal-card">
+            <span class="close-modal" id="modalClose">&times;</span>
+            <h3>How would you like to place your order?</h3>
+            <p style="color:#666;">Get unified response interactions within 5 minutes from our team.</p>
+            <div class="modal-options">
+                <a href="https://wa.me/2348034754960?text=Hello%20Adex%20Farm,%20I%20want%20to%20place%20an%20order%20now." class="btn btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Proceed directly via WhatsApp
+                </a>
+                <a href="tel:08034754960" class="btn btn-gold">
+                    <i class="fa fa-phone"></i> Call Client Desk: 08034754960
+                </a>
+                <a href="tel:08080557072" class="btn btn-brown">
+                    <i class="fa fa-phone"></i> Alternative Line: 08080557072
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CODE INJECTION INTERACTION SCRIPT -->
+    <script>
+        // Sticky Header Transition Logic
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('.navbar');
+            if(window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Testimonial Carousel Mechanics
+        let activeIndex = 0;
+        function moveSlide(index) {
+            const track = document.getElementById('testimonial-track');
+            const dots = document.querySelectorAll('#carousel-dots .dot');
+            
+            // Accommodate mobile tracking or multi-item sliding parameters safely
+            let shiftValue = index * 33.333;
+            if(window.innerWidth <= 768) {
+                shiftValue = index * 100;
+            }
+            
+            track.style.transform = `translateX(-${shiftValue}%)`;
+            
+            dots.forEach(d => d.classList.remove('active'));
+            dots[index].classList.add('active');
+            activeIndex = index;
+        }
+
+        // Auto transition slider loop sequence
+        setInterval(() => {
+            let next = activeIndex === 0 ? 1 : 0;
+            moveSlide(next);
+        }, 6000);
+
+        // Modal Action Logic Triggers
+        const modal = document.getElementById('orderModal');
+        const closeBtn = document.getElementById('modalClose');
+        const triggers = document.querySelectorAll('.trigger-order-modal');
+
+        triggers.forEach(btn => {
+            btn.addEventListener('click', () => {
+                modal.style.display = 'flex';
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if(e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Mobile responsive adaptive configurations
+        document.getElementById('mob-menu-toggle').addEventListener('click', function() {
+            modal.style.display = 'flex'; // Default quick fallback interaction for target layout execution
+        });
+    </script>
+</body>
+</html>
